@@ -1,0 +1,24 @@
+<section class="section">
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="text-center">Доходы</h3>
+      <div class="chart-center">
+        <ngx-charts-pie-chart [view]="[545, 355]"
+                              [results]="dataIncome"
+                              [labels]="true"
+                              [doughnut]="true">
+        </ngx-charts-pie-chart>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="text-center">Расходы</h3>
+      <div class="chart-center">
+        <ngx-charts-pie-chart [view]="[545, 355]"
+                              [results]="dataOutcome"
+                              [labels]="true"
+                              [doughnut]="true">
+        </ngx-charts-pie-chart>
+      </div>
+    </div>
+  </div>
+</section>
