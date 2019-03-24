@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { Category } from '../../shared/models/category.model';
 import { AppEvent } from '../../shared/models/event.model';
 
@@ -16,6 +17,25 @@ export class HistoryEventsComponent implements OnInit {
   searchPlaceholder: string = 'Сумма';
   searchField: string = 'amount';
 
+  settings = {
+    actions: {
+      position: 'right'
+    },
+    columns: {
+      id: {
+        title: 'ID'
+      },
+      name: {
+        title: 'Full Name'
+      },
+      username: {
+        title: 'User Name'
+      },
+      email: {
+        title: 'Email'
+      }
+    }
+  };
 
   constructor() { }
 

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class BaseApi {
   
-  private baseUrlOne = 'http://localhost:19203/api';
+  private baseUrlOne = 'https://webapiuserregistration20190321081457.azurewebsites.net/api';
 
   constructor(
     public http: HttpClient

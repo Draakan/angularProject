@@ -42,24 +42,12 @@ export class HistoryPageComponent implements OnInit {
     });
   }
 
-  calculateChartData(): void {
-    this.chartDataOutcome = [];
-    this.chartDataIncome = [];
+  chartData(field: string, type: string): void {
+    this[field] = [];
 
     this.categories.forEach((cat) => {
-      const catEvent = this.filteredEvents.filter((e) => e.categoryId === cat.id && e.type === 'outcome');
-      this.chartDataOutcome.push({
-        name: cat.name,
-        value: catEvent.reduce((total, e) => {
-          total += e.amount;
-          return total
-        }, 0)
-      });
-    });
-
-    this.categories.forEach((cat) => {
-      const catEvent = this.filteredEvents.filter((e) => e.categoryId === cat.id && e.type === 'income');
-      this.chartDataIncome.push({
+      const catEvent = this.filteredEvents.filter((e) => e.categoryId === cat.id && e.type === type);
+      this[field].push({
         name: cat.name,
         value: catEvent.reduce((total, e) => {
           total += e.amount;
@@ -71,6 +59,11 @@ export class HistoryPageComponent implements OnInit {
 
   private setOriginalEvents() {
     this.filteredEvents = this.events.slice();
+  }
+
+  private calculateChartData() {
+    this.chartData('chartDataIncome', 'income');
+    this.chartData('chartDataOutcome', 'outcome');
   }
 
   private toggleFilterVisibility(dir: boolean) {
@@ -96,7 +89,6 @@ export class HistoryPageComponent implements OnInit {
         return filterData.categories.indexOf(e.categoryId) !== -1;
       })
       .filter((e) => {
-        console.log(e.date);
         const momentDate = moment(e.date, 'DD.MM.YYYY HH:mm:ss');
         return momentDate.isBetween(startPeriod, endPeriod);
       });

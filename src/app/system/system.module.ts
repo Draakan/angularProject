@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { SharedModule } from '../shared/shared.module';
 import { SystemRoutingModule } from './system-routing.module';
@@ -29,7 +30,8 @@ import { FilterPipe } from './shared/pipes/filter.pipe';
   imports: [
     CommonModule,
     SharedModule,
-    SystemRoutingModule
+    SystemRoutingModule,
+    Ng2SmartTableModule
   ],
   declarations: [
     BillPageComponent,
