@@ -40,7 +40,6 @@ export class HistoryEventsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
     this.events.forEach((e) => {
       e.catName = this.categories.find(c => c.id === e.categoryId).name;
     });

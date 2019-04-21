@@ -25,13 +25,16 @@ import { HistoryEventsComponent } from './history-page/history-events/history-ev
 import { HistoryDetailComponent } from './history-page/history-detail/history-detail.component';
 import { HistoryFilterComponent } from './history-page/history-filter/history-filter.component';
 import { FilterPipe } from './shared/pipes/filter.pipe';
+import { NbSidebarModule, NbLayoutModule, NbSidebarService } from '@nebular/theme';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
     SystemRoutingModule,
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
+    NbLayoutModule,
+    NbSidebarModule
   ],
   declarations: [
     BillPageComponent,
@@ -56,7 +59,8 @@ import { FilterPipe } from './shared/pipes/filter.pipe';
   providers: [
     BillService,
     CategoriesService,
-    EventService
+    EventService,
+    NbSidebarService
   ]
 })
 export class SystemModule { }

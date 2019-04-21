@@ -4,11 +4,10 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\system",
-    "\\src\\app\\system\\history-page",
-    "\\src\\app\\system\\history-page\\history-detail",
-    "\\src\\app\\system\\history-page\\history-events",
-    "\\src\\app\\system\\records-page"
+    "\\src\\app\\system\\bill-page",
+    "\\src\\app\\system\\records-page",
+    "\\src\\app\\system\\shared"
   ],
-  "SelectedNode": "\\src\\app\\system\\history-page\\history-events\\history-events.component.html",
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }

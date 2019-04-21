@@ -32,7 +32,7 @@
   <div class="form-group">
     <button type="submit"
             class="btn btn-block btn-primary"
-            [disabled]="form.invalid"
+            [disabled]="form.invalid || isLoadingLogin"
             >Войти</button>
   </div>
   <div class="form-group">
